@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNC Delivery - Fast & Reliable Delivery Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-motorcycle"></i> MNC Delivery</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li><a href="#tracking">Track Order</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-outline" id="loginBtn"><i class="fas fa-user"></i> Login</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Delicious Food Delivered Fast</h2>
+                <p>Get your favorite meals delivered to your doorstep in minutes!</p>
+                <div class="search-container">
+                    <input type="text" id="locationInput" placeholder="Enter your address...">
+                    <button class="btn btn-primary" id="findFoodBtn">Find Food</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Wide Selection</h3>
+                    <p>Choose from hundreds of local restaurants</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-truck-fast"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your food delivered in 30 minutes or less</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Easy Tracking</h3>
+                    <p>Track your order in real-time on our app</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Secure Payments</h3>
+                    <p>Pay online or cash on delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="restaurants" class="restaurants">
+        <div class="container">
+            <h2>Popular Restaurants</h2>
+            <div class="restaurant-grid" id="restaurantList">
+                <!-- Restaurant list will be populated dynamically -->
+                <div class="restaurant-card">
+                    <div class="restaurant-img">
+                        <img src="/api/placeholder/300/200" alt="Restaurant">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Burger Palace</h3>
+                        <div class="restaurant-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                            <span class="time"><i class="fas fa-clock"></i> 25-30 min</span>
+                        </div>
+                        <p>Burgers, Fast Food, American</p>
+                    </div>
+                </div>
+                
+                <div class="restaurant-card">
+                    <div class="restaurant-img">
+                        <img src="/api/placeholder/300/200" alt="Restaurant">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Pizza Haven</h3>
+                        <div class="restaurant-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                            <span class="time"><i class="fas fa-clock"></i> 30-45 min</span>
+                        </div>
+                        <p>Pizza, Italian, Pasta</p>
+                    </div>
+                </div>
+                
+                <div class="restaurant-card">
+                    <div class="restaurant-img">
+                        <img src="/api/placeholder/300/200" alt="Restaurant">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Sushi Express</h3>
+                        <div class="restaurant-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                            <span class="time"><i class="fas fa-clock"></i> 35-50 min</span>
+                        </div>
+                        <p>Japanese, Sushi, Asian</p>
+                    </div>
+                </div>
+                
+                <div class="restaurant-card">
+                    <div class="restaurant-img">
+                        <img src="/api/placeholder/300/200" alt="Restaurant">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Taco Fiesta</h3>
+                        <div class="restaurant-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.5</span>
+                            <span class="time"><i class="fas fa-clock"></i> 20-35 min</span>
+                        </div>
+                        <p>Mexican, Tacos, Burritos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <button class="btn btn-outline" id="viewMoreBtn">View More Restaurants</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="tracking" class="tracking">
+        <div class="container">
+            <h2>Track Your Order</h2>
+            <div class="tracking-form">
+                <input type="text" id="orderIdInput" placeholder="Enter your order ID...">
+                <button class="btn btn-primary" id="trackOrderBtn">Track Order</button>
+            </div>
+            <div class="tracking-result" id="trackingResult" style="display: none;">
+                <div class="order-status">
+                    <h3>Order #<span id="displayOrderId">12345</span></h3>
+                    <div class="status-timeline">
+                        <div class="status-item active">
+                            <div class="status-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="status-label">Order Placed</div>
+                        </div>
+                        <div class="status-item active">
+                            <div class="status-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="status-label">Confirmed</div>
+                        </div>
+                        <div class="status-item current">
+                            <div class="status-icon"><i class="fas fa-utensils"></i></div>
+                            <div class="status-label">Preparing</div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-icon"><i class="fas fa-motorcycle"></i></div>
+                            <div class="status-label">Out for Delivery</div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-icon"><i class="fas fa-house-user"></i></div>
+                            <div class="status-label">Delivered</div>
+                        </div>
+                    </div>
+                    <div class="delivery-estimate">
+                        <p>Estimated delivery time: <span id="estimatedTime">7:30 PM</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About MNC Delivery</h2>
+                    <p>MNC Delivery is a leading food delivery service, connecting customers with the best local restaurants in town. Our mission is to make food delivery fast, reliable, and enjoyable.</p>
+                    <p>Founded in 2025, we've quickly grown to serve thousands of customers and partner with hundreds of restaurants. We're committed to supporting local businesses while providing exceptional service to our customers.</p>
+                    <ul class="about-stats">
+                        <li><span>500+</span> Restaurants</li>
+                        <li><span>10,000+</span> Customers</li>
+                        <li><span>1,000+</span> Daily Deliveries</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/400/300" alt="MNC Delivery">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nameInput">Name</label>
+                            <input type="text" id="nameInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailInput">Email</label>
+                            <input type="email" id="emailInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="messageInput">Message</label>
+                            <textarea id="messageInput" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Main Street, Suite 456<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@mncdelivery.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Monday-Sunday: 10:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>MNC Delivery</h3>
+                    <p>Fast and reliable food delivery service connecting you with the best local restaurants.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#restaurants">Restaurants</a></li>
+                        <li><a href="#tracking">Track Order</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>For Businesses</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Partner With Us</a></li>
+                        <li><a href="#">Become a Courier</a></li>
+                        <li><a href="#">Restaurant Dashboard</a></li>
+                        <li><a href="#">Business Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Download Our App</h3>
+                    <p>Get the best experience with our mobile app</p>
+                    <div class="app-links">
+                        <a href="#" class="app-link"><i class="fab fa-apple"></i> App Store</a>
+                        <a href="#" class="app-link"><i class="fab fa-google-play"></i> Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MNC Delivery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Login/Signup -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="auth-tabs">
+                <div class="tab active" data-tab="login">Login</div>
+                <div class="tab" data-tab="signup">Sign Up</div>
+            </div>
+            <div class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-group">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button class="btn btn-primary btn-block">Login</button>
+            </div>
+            <div class="auth-form" id="signupForm" style="display: none;">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPhone">Phone</label>
+                    <input type="tel" id="signupPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <button class="btn btn-primary btn-block">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
